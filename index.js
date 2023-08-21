@@ -3,13 +3,14 @@ const apiKey ='035f71d9e2fa36ae4b23378b127ece01'
     const searchBox = document.querySelector('.search input')
     const searchBtn = document.querySelector('.search button')
     const weatherIcon = document.querySelector('.weather-icon')
-    const cond = document.querySelector('icon')
+    const cond = document.querySelector('.condition')
     async function checkWeather(city) 
     {
         document.querySelector('.weather').style.display = "block"
         const response = await fetch( apiUrl + city + `&appid=${apiKey}`)
         const data = await response.json()
 
+        console.log(data)
         if(response.status === 404){
             document.querySelector('.error').style.display = 'block'
             document.querySelector('.weather').style.display = 'none'
@@ -25,18 +26,18 @@ const apiKey ='035f71d9e2fa36ae4b23378b127ece01'
    
        if(data.weather[0].main == 'Clouds') {
         weatherIcon.src='images/clouds.png';
-        cond.innerHTML= 'Cloudy'
+        cond.innerHTML= 'Cloudy';
        } else if (data.weather[0].main == 'Clear') {
         weatherIcon.src='images/clear.png';
-        cond.innerHTML= 'Clear Sky'
+        cond.innerHTML= 'Clear Sky';
        }
        else if (data.weather[0].main == 'Rain') {
         weatherIcon.src='images/rain.png';
-        cond.innerHTML= 'Rainy'
+        cond.innerHTML= 'Rainy';
        }
        else if (data.weather[0].main == 'Drizzle') {
         weatherIcon.src='images/drizzle.png';
-        cond.innerHTML= 'Drizzling'
+        cond.innerHTML= 'Drizzling';
        }
        else if (data.weather[0].main == 'Mist') {
         weatherIcon.src='images/mist.png';

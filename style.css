@@ -204,8 +204,9 @@ h2 {
 
 .spinning {
 	-webkit-animation: spinaround 8s infinite linear;
-	animation: spinaround 30s infinite linear;
+	animation: spinaround 60s infinite linear;
     font-size: 20px;
+    font-family: halvetica; 
 }
  @-webkit-keyframes spinaround {
  to {
